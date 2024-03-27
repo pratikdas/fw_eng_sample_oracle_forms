@@ -1,0 +1,224 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Module version="122011900" xmlns="http://xmlns.oracle.com/Forms">
+   <FormModule Name="G1_CUSTOMERDETAIL" RuntimeComp="5.0" DirtyInfo="true" FirstNavigationBlockName="BLOCKNAME">
+      <Coordinate CharacterCellWidth="100" RealUnit="Inch" DefaultFontScaling="true" CharacterCellHeight="250" CoordinateSystem="Real"/>
+      <Block Name="G1_ACCOUNTREQUEST_B1" QueryDataSourceName="G1_ACCOUNTREQUEST" DirtyInfo="true" ScrollbarWidth="188" ScrollbarLength="1875">
+         <Item Name="REQUESTID" DistanceBetweenRecords="2444" Width="1125" MaximumLength="11" XPosition="2022" Required="true" FontName="Tahoma" YPosition="504" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Requestid :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DataType="Number" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="REQUESTID" PromptDisplayStyle="All Records"/>
+         <Item Name="BRANCH" DistanceBetweenRecords="2444" Width="1500" MaximumLength="15" XPosition="2022" Required="true" FontName="Tahoma" YPosition="817" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Branch :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="BRANCH" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE"/>
+         <Item Name="ACCOUNTTYPE" DistanceBetweenRecords="2444" Width="1500" MaximumLength="15" XPosition="2022" Required="true" FontName="Tahoma" YPosition="1130" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Accounttype :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="ACCOUNTTYPE" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE"/>
+         <Item Name="TITLE" DistanceBetweenRecords="2444" Width="469" MaximumLength="4" XPosition="2022" Required="true" FontName="Tahoma" YPosition="1443" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Title :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="TITLE" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE"/>
+         <Item Name="FIRSTNAME" DistanceBetweenRecords="2444" Width="1500" MaximumLength="15" XPosition="2022" Required="true" FontName="Tahoma" YPosition="1756" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Firstname :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="FIRSTNAME" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE"/>
+         <Item Name="LASTNAME" DistanceBetweenRecords="2444" Width="1500" MaximumLength="15" XPosition="2022" Required="true" FontName="Tahoma" YPosition="2069" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Lastname :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="LASTNAME" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE"/>
+         <Item Name="DOB" DistanceBetweenRecords="2444" Width="1125" MaximumLength="11" XPosition="2022" Required="true" FontName="Tahoma" YPosition="2382" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Dob :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DataType="Date" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="DOB" PromptDisplayStyle="All Records"/>
+         <Item Name="WORKPHONE" DistanceBetweenRecords="2444" Width="1125" MaximumLength="11" XPosition="2022" Required="true" FontName="Tahoma" YPosition="2695" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Workphone :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DataType="Number" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="WORKPHONE" PromptDisplayStyle="All Records"/>
+         <Item Name="HOMEPHONE" DistanceBetweenRecords="2444" Width="1125" MaximumLength="11" XPosition="2022" Required="true" FontName="Tahoma" YPosition="3008" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Homephone :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DataType="Number" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="HOMEPHONE" PromptDisplayStyle="All Records"/>
+         <Item Name="ADDRESS" DistanceBetweenRecords="2444" Width="2906" XPosition="2022" Required="true" FontName="Tahoma" YPosition="3321" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" ForegroundColor="black" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Address :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="ADDRESS" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE"/>
+         <Item Name="STATE" DistanceBetweenRecords="2444" Width="1500" MaximumLength="15" XPosition="2022" Required="true" FontName="Tahoma" YPosition="3634" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="State :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="STATE" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE"/>
+         <Item Name="ZIP" DistanceBetweenRecords="2444" Width="1125" MaximumLength="11" XPosition="2022" Required="true" FontName="Tahoma" YPosition="3947" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Zip :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DataType="Number" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="ZIP" PromptDisplayStyle="All Records"/>
+         <Item Name="EMAIL" DistanceBetweenRecords="2444" Width="2906" XPosition="2022" Required="true" FontName="Tahoma" YPosition="4260" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Email :" TabPageName="" PromptAttachmentOffset="94" PromptFontSize="800" ItemType="Display Item" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="EMAIL" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE"/>
+         <Item Name="STATUS" DistanceBetweenRecords="2444" Width="1031" MaximumLength="10" XPosition="2022" FontName="Tahoma" YPosition="4573" FontSize="800" FontStyle="Plain" FontWeight="Bold" PromptFontName="Tahoma" FontSpacing="Normal" CanvasName="BLOCKNAME" ItemsDisplay="0" Height="188" Prompt="Status :" TabPageName="" PromptAttachmentOffset="44" PromptFontSize="800" ItemType="Display Item" DirtyInfo="true" PromptFontStyle="Plain" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="STATUS" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="true" DSCPrecision="10" DSCName="REQUESTID" DSCScale="0" DSCType="NUMBER" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="15" DSCMandatory="true" DSCPrecision="0" DSCName="BRANCH" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="15" DSCMandatory="true" DSCPrecision="0" DSCName="ACCOUNTTYPE" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="4" DSCMandatory="true" DSCPrecision="0" DSCName="TITLE" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="15" DSCMandatory="true" DSCPrecision="0" DSCName="FIRSTNAME" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="15" DSCMandatory="true" DSCPrecision="0" DSCName="LASTNAME" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="true" DSCPrecision="0" DSCName="DOB" DSCScale="0" DSCType="DATE" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="true" DSCPrecision="10" DSCName="WORKPHONE" DSCScale="0" DSCType="NUMBER" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="true" DSCPrecision="10" DSCName="HOMEPHONE" DSCScale="0" DSCType="NUMBER" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="30" DSCMandatory="true" DSCPrecision="0" DSCName="ADDRESS" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="15" DSCMandatory="true" DSCPrecision="0" DSCName="STATE" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="true" DSCPrecision="10" DSCName="ZIP" DSCScale="0" DSCType="NUMBER" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="30" DSCMandatory="true" DSCPrecision="0" DSCName="EMAIL" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="10" DSCMandatory="false" DSCPrecision="0" DSCName="STATUS" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+      </Block>
+      <Block Name="BLOCKNAME" RecordsBufferedCount="0" RecordsDisplayCount="1" RecordsFetchedCount="0" InsertAllowed="true" UpdateAllowed="true" DeleteAllowed="true" DirtyInfo="true" KeyMode="Unique" PreviousNavigationBlockName="BLOCKNAME" DatabaseBlock="false" QueryDataSourceType="None" QueryAllowed="true" DMLDataType="None" NavigationStyle="Change Data Block" ShowScrollbar="false">
+         <Item Name="BACK" Width="700" ItemType="Push Button" BackColor="canvas" XPosition="7050" FontName="helvetica" YPosition="125" FontSize="1100" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" Label="BACK" FontSpacing="Normal" ForegroundColor="black" CanvasName="BLOCKNAME" Height="250">
+            <Trigger Name="WHEN-BUTTON-PRESSED" DirtyInfo="true" TriggerText="declare&amp;#10;&#x9; pl_ACCo paramlist;&amp;#10;BEGIN&amp;#10;&amp;#10;&amp;#10;&#x9;IF NOT ID_NULL(pl_ACCo) THEN&amp;#10;    destroy_parameter_list(pl_ACCo);&amp;#10;    ELSE&amp;#10;    pl_ACCo := create_parameter_list('pl_Aq');&amp;#10;   add_parameter(pl_ACCo,'P1',text_parameter,:requestid);&amp;#10;   &#x9;END IF;&amp;#10;CALL_FORM('/data/appl/apps/apps_st/appl/po/12.0.0/forms/US/G1_MANAGERAPPROVAL.fmx',NO_HIDE,DO_REPLACE,NO_QUERY_ONLY,pl_ACCo);&amp;#10;END;&amp;#10;&amp;#10;&amp;#10;&amp;#10;"/>
+         </Item>
+      </Block>
+      <Canvas Name="BLOCKNAME" ShowHorizontalScrollbar="false" DirtyInfo="true" Width="20813" WindowName="BLOCKNAME" ShowVerticalScrollbar="false" Height="13813">
+         <Graphics Name="IMAGE126" Width="7800" ClipWidth="7800" ImageFilename="G1_CUSTOMERDETAIL_BLOCKNAME_IMAGE126.tif" ClipHeight="5000" DirtyInfo="true" GraphicsType="Image" HorizontalMargin="94" ScrollbarWidth="188" VerticalMargin="188" HorizontalObjectOffset="188" Height="5000" StartPromptOffset="94"/>
+         <Graphics Name="FRAME120" Width="5850" EdgeBackColor="white" FillPattern="none" EdgePattern="solid" FrameTitleOffset="188" XPosition="999" FrameTitleSpacing="94" YPosition="441" Bevel="Inset" DirtyInfo="true" LayoutDataBlockName="G1_ACCOUNTREQUEST_B1" GraphicsType="Frame" HorizontalMargin="94" ScrollbarWidth="188" VerticalMargin="188" HorizontalObjectOffset="188" Height="4435" StartPromptOffset="94"/>
+         <Graphics Name="TEXT121" Width="1354" FillPattern="none" EdgePattern="none" BackColor="r85g85b85" XPosition="2682" YPosition="375" Bevel="None" VerticalOrigin="Bottom" GraphicsFontWeight="Bold" GraphicsFontSpacing="Normal" GraphicsType="Text" ScrollbarWidth="188" Height="167" GraphicsFontName="helvetica" GraphicsFontSize="1600" GraphicsFontStyle="0" GraphicsText="CUSTOMER DETAILS" DirtyInfo="true" GraphicsFontColor="black" GraphicsFontColorCode="0" HorizontalMargin="94" VerticalMargin="188" HorizontalObjectOffset="188" StartPromptOffset="94">
+            <CompoundText Name="CMPTXT122">
+               <TextSegment Name="TEXTSTR123" FontName="helvetica" FontSize="1600" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" FontSpacing="Normal" ForegroundColor="black" Text="CUSTOMER DETAILS"/>
+            </CompoundText>
+         </Graphics>
+      </Canvas>
+      <ModuleParameter Name="P5" DirtyInfo="true"/>
+      <ProgramUnit Name="APP_CUSTOM" ProgramUnitText="package app_custom is&amp;#10;  procedure close_window(wnd in varchar2);&amp;#10;  procedure open_window(wnd in varchar2);&amp;#10;end;" ProgramUnitType="Package Spec"/>
+      <ProgramUnit Name="APP_CUSTOM" ProgramUnitText="package body app_custom is&amp;#10;&amp;#10;procedure close_window(wnd in varchar2) is&amp;#10;  /*&amp;#10;    This procedure is called whenever the user closes a window, as&amp;#10;    a result of the WHEN-WINDOW-CLOSED trigger firing. You are responsible&amp;#10;    for supplying unqiue code that addresses the needs of each window, such as&amp;#10;    deferring master-detail relations, or closing related windows.&amp;#10;&amp;#10;    Other windows that will be referenced into your form rely on the default&amp;#10;    code at the beginning and end of this procedure - under no circumstances&amp;#10;    should you modify that code.&amp;#10;  */&amp;#10;begin&amp;#10;&amp;#10;  /*&amp;#10;    THE FOLLOWING CODE MUST NOT BE MODIFIED. It prevents windows from closing&amp;#10;    while in enter-query mode.&amp;#10;  */&amp;#10;&amp;#10;  if (name_in('system.mode') = 'ENTER-QUERY') then&amp;#10;    app_exception.disabled;&amp;#10;    return;&amp;#10;  end if;&amp;#10;&amp;#10;  /*&amp;#10;    YOU MUST MODIFY THE FOLLOWING CODE to account for specific behaviors of your&amp;#10;    form, including:&amp;#10;    1. identifying the 'first window' of the form and treating&amp;#10;       a close window on that window like a close form.&amp;#10;    2. deferring master-detail relations for detail blocks that&amp;#10;       exist in other windows.&amp;#10;    3. closing other related windows.&amp;#10;    The default code at the end of this procedure actually closes the window.&amp;#10;    If you do that yourself in this code, issue a 'return;' at the end of &amp;#10;    your logic for your specific windows.&amp;#10;  */ &amp;#10;&amp;#10;  if (wnd = 'BLOCKNAME') then&amp;#10;    app_window.close_first_window;&amp;#10;  elsif (wnd = 'BLOCKNAME') then &amp;#10;    --defer relations&amp;#10;    --close related windows   &amp;#10;    null;  &amp;#10;  elsif (wnd = 'BLOCKNAME') then &amp;#10;    --defer relations&amp;#10;    --close related windows   &amp;#10;    null;&amp;#10;  end if;&amp;#10;&amp;#10;  /*&amp;#10;    THE FOLLOWING CODE MUST NOT BE MODIFIED. It ensures the cursor is not in &amp;#10;    the window that will be closed (by moving it to the previous block if &amp;#10;    needed), and actually closes the specified window.&amp;#10;  */&amp;#10;&amp;#10;  if (wnd = get_view_property(get_item_property(:SYSTEM.CURSOR_ITEM, &amp;#10;                              ITEM_CANVAS), WINDOW_NAME)) then&amp;#10;    do_key('PREVIOUS_BLOCK');&amp;#10;  end if;&amp;#10;  hide_window(wnd);&amp;#10;&amp;#10;end close_window;&amp;#10;&amp;#10;procedure open_window(wnd in varchar2) is&amp;#10;  /*&amp;#10;    This procedure should be called from any code that could result&amp;#10;    in a non-modal window being opened.&amp;#10;  */&amp;#10;begin  &amp;#10;  /*&amp;#10;    YOU MUST MODIFY THE FOLLOWING CODE to account for specific behaviors of your&amp;#10;    form, including:   &amp;#10;    1. Positioning the window to be opened&amp;#10;    2. Resetting master-detail relations for blocks in the window    &amp;#10;    3. navigation to a block in that window&amp;#10;  */&amp;#10;  if (wnd = 'BLOCKNAME') then&amp;#10;    --position the window&amp;#10;    --reset master-detail relations&amp;#10;    --navigate to a block in the window&amp;#10;    null;&amp;#10;  elsif (wnd = 'BLOCKNAME') then &amp;#10;    --position the window&amp;#10;    --reset master-detail relations&amp;#10;    --navigate to a block in the window&amp;#10;    null;&amp;#10;  elsif (wnd = 'BLOCKNAME') then &amp;#10;    --position the window&amp;#10;    --reset master-detail relations&amp;#10;    --navigate to a block in the window&amp;#10;    null;&amp;#10;  end if;&amp;#10;&amp;#10;end open_window;&amp;#10;&amp;#10;end app_custom;&amp;#10;" ProgramUnitType="Package Body"/>
+      <Trigger Name="WHEN-WINDOW-RESIZED" FireInQuery="true" TriggerText="null;&amp;#10;--&amp;#10;-- if :system.event_window in ('folder windows') then&amp;#10;--   app_folder.event('WHEN-WINDOW-RESIZED');&amp;#10;-- end if;&amp;#10;--" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="FOLDER_ACTION" FireInQuery="true" TriggerText="--&amp;#10;-- Remove the message and uncomment the line after it&amp;#10;-- to activate the folder actions&amp;#10;--&amp;#10;message('You must modify the FOLDER_ACTION trigger in your form!');&amp;#10;-- app_folder.event(:global.folder_action);" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="FOLDER_RETURN_ACTION" FireInQuery="true" TriggerText="null;&amp;#10;--&amp;#10;-- action code is in :global.folder_action&amp;#10;-- affected field is in :global.folder_field&amp;#10;--" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-HELP" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-HELP');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-DUPREC" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-DUPREC');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-EXIT" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-EXIT');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-EDIT" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-EDIT');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-COMMIT" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-COMMIT');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-CLRFRM" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-CLRFRM');&amp;#10;--&amp;#10;-- app_folder.event('KEY-CLRFRM');&amp;#10;--" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-MENU" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-MENU');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-LISTVAL" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-LISTVAL');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="WHEN-WINDOW-CLOSED" FireInQuery="true" TriggerText="app_standard.event('WHEN-WINDOW-CLOSED');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="POST-FORM" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('POST-FORM');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="PRE-FORM" TriggerText="FND_STANDARD.FORM_INFO('$Revision: 120.0                                                                                                                                              $', 'Template Form', 'FND',&amp;#10;                       '$Date: 2005/05/06 23:25  $', '$Author: appldev $');&amp;#10;app_standard.event('PRE-FORM');&amp;#10;app_window.set_window_position('BLOCKNAME', 'FIRST_WINDOW');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="ON-ERROR" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('ON-ERROR');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="WHEN-NEW-FORM-INSTANCE" FireInQuery="true" TriggerText="FDRCSID('$Header: TEMPLATE.fmb 120.0 2005/05/06 23:25  appldev ship                                                                                                                                                                                                                                                                    $');&amp;#10;APP_STANDARD.EVENT('WHEN-NEW-FORM-INSTANCE');&amp;#10;--&amp;#10;-- app_folder.define_folder_block('template test', 'folder_block', 'prompt_block', 'stacked_canvas', 'window', 'disabled functions');&amp;#10;-- app_folder.event('VERIFY');&amp;#10;--&amp;#10;&amp;#10;DECLARE &amp;#10;  V_REC G1_ACCOUNTREQUEST%ROWTYPE;&amp;#10;BEGIN&amp;#10;&#x9;:REQUESTID:=:PARAMETER.P5;&amp;#10;  SELECT * INTO V_REC FROM G1_ACCOUNTREQUEST WHERE REQUESTID=:REQUESTID;&amp;#10;  :BRANCH:=V_REC.BRANCH;&amp;#10;  :ACCOUNTTYPE:=V_REC.ACCOUNTTYPE;&amp;#10;  :TITLE:=V_REC.TITLE;&amp;#10;  :FIRSTNAME:=V_REC.FIRSTNAME;&amp;#10;  :LASTNAME:=V_REC.LASTNAME;&amp;#10;  :DOB:=V_REC.DOB;&amp;#10;  :WORKPHONE:=V_REC.WORKPHONE;&amp;#10;  :HOMEPHONE:=V_REC.HOMEPHONE;&amp;#10;  :ADDRESS:=V_REC.ADDRESS;&amp;#10;  :STATE:=V_REC.STATE;&amp;#10;  :ZIP:=V_REC.ZIP;&amp;#10;  :EMAIL:=V_REC.EMAIL;&amp;#10;  :STATUS:=V_REC.STATUS;&amp;#10;  END;" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="WHEN-NEW-RECORD-INSTANCE" TriggerText="APP_STANDARD.EVENT('WHEN-NEW-RECORD-INSTANCE');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="WHEN-NEW-ITEM-INSTANCE" TriggerText="APP_STANDARD.EVENT('WHEN-NEW-ITEM-INSTANCE');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="WHEN-NEW-BLOCK-INSTANCE" TriggerText="APP_STANDARD.EVENT('WHEN-NEW-BLOCK-INSTANCE');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="QUERY_FIND" TriggerText="APP_STANDARD.EVENT('QUERY_FIND');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="CLOSE_WINDOW" TriggerText="APP_CUSTOM.CLOSE_WINDOW(:SYSTEM.EVENT_WINDOW);" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="ACCEPT" TriggerText="APP_STANDARD.EVENT('ACCEPT');" DisplayInKeyboardHelp="true"/>
+      <Window Name="BLOCKNAME" DirtyInfo="true" Title="Block Title (name of the object)" Width="7800" Height="5000" PrimaryCanvas="BLOCKNAME"/>
+      <ObjectGroup Name="STANDARD_PC_AND_VA" ParentModule="APPSTAND" ParentModuleType="12" ParentName="STANDARD_PC_AND_VA" ParentFilename="APPSTAND" ParentType="23">
+         <ObjectGroupChild Name="TOOLTIP" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DATA" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DATA_REQUIRED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DATA_SPECIAL" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DATA_DRILLDOWN" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="PROMPT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TITLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CONTROL" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON_ICONIC" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON_MAC" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CANVAS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DISABLED_TEXT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="SELECTED_DATA" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="RADIO_CHECK" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FIXED_TEXT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FIXED_PROMPT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CURRENT_RECORD" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="OTHER_RECORD" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="QUERY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CUSTOM1" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CUSTOM2" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CUSTOM3" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CUSTOM4" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CUSTOM5" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FRAME_TITLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ASSOCIATED_PROMPT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FLEX_EDITABLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FLEX_REQUIRED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FLEX_NOT_EDITABLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="NO_CHANGE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="MODULE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="WINDOW" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="WINDOW_DIALOG" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="WINDOW_DIALOG_WITH_MENU" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CANVAS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CANVAS_STACKED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CANVAS_STACKED_FIXED_FIELD" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BLOCK" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BLOCK_DIALOG" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON_ICONIC" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON_ICONIC_SMALL" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CURSOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_CELL" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CHECKBOX" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CREATION_OR_LAST_UPDATE_DATE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DISPLAY_ITEM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DYNAMIC_PROMPT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DYNAMIC_TITLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="LIST" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="LIST_REGION_CONTROL" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="LOV" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="RADIO_GROUP" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="RADIO_BUTTON" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_MULTILINE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_DISPLAY_ONLY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_DATE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CURRENT_RECORD_INDICATOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DRILLDOWN_RECORD_INDICATOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CHECKBOX_COORDINATION" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_CURRENCY_CODE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_DESC_FLEX" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_PERCENT_FIXED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_PERCENT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ROW_ID" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="SWITCHER" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BP_PROMPT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FRAME_VERT_LINE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FRAME_HORZ_LINE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BP_TITLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FRAME_RECT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TAB_CANVAS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TAB_PAGE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TREE" SubclassSubObject="true"/>
+      </ObjectGroup>
+      <ObjectGroup Name="STANDARD_TOOLBAR" ParentModule="APPSTAND" ParentModuleType="12" ParentName="STANDARD_TOOLBAR" ParentFilename="APPSTAND" ParentType="23">
+         <ObjectGroupChild Name="APPCORE_PROFILE_NOT_DEFINED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_FUNCTION_PROCESSED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_NONE_AVAILABLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_PROPERTIES" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_PROPERTIES" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="HELP_TARGET" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="PROGRESS_INDICATOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="PROGRESS_INDICATOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F9" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F0" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F1" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F2" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F3" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F4" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F5" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F6" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F7" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F8" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="PROGRESS_INDICATOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="EXPORT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ALT_REGIONS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ALT_REGIONS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ALT_REGIONS_DUM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ZOOM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ZOOM_DUM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ZOOM_VALUE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APP_ACCESS_DUM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APP_ACCESS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FOLDER_BLOCKS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="LASTRECORD" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CLOSE_THIS_WINDOW" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TOOLBAR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ENABLE_LIST_LAMP" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ENABLE_LIST_LAMP" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ZOOM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="QUERY_ONLY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="G_QUERY_FIND" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="STANDARD_ATTACHMENTS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="HR_MODE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="WHEN-FORM-NAVIGATE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="MENU_TO_APPCORE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="PRE-POPUP-MENU" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="POPUP" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="POPUP_FOLDER" SubclassSubObject="true"/>
+      </ObjectGroup>
+      <ObjectGroup Name="STANDARD_CALENDAR" ParentModule="APPSTAND" ParentModuleType="12" ParentName="STANDARD_CALENDAR" ParentFilename="APPSTAND" ParentType="23">
+         <ObjectGroupChild Name="TIMEZONES_AND_DATETIME" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TIMEZONES" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_TIMEZONE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="STANDARD_DAYS_LABELS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ARABIC_DAYS_LABELS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_TO_CALENDAR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_TIME" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_SELECTED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_SELECTED_TODAY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_CURR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_CURR_TODAY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_OTHER" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_OTHER_TODAY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_CURR_DISABLED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_CURR_DISABLED_TODAY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_OTHER_DISABLED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_OTHER_DISABLED_TODAY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TIMEZONES_AND_DATETIME" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TIMEZONES" SubclassSubObject="true"/>
+      </ObjectGroup>
+   </FormModule>
+</Module>

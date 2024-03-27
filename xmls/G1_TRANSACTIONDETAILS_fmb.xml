@@ -1,0 +1,243 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Module version="122011900" xmlns="http://xmlns.oracle.com/Forms">
+   <FormModule Name="G1_TRANSACTIONDETAILS" RuntimeComp="5.0" DirtyInfo="true" FirstNavigationBlockName="BLOCKNAME">
+      <Coordinate CharacterCellWidth="100" RealUnit="Inch" DefaultFontScaling="true" CharacterCellHeight="250" CoordinateSystem="Real"/>
+      <Block Name="BLOCKNAME" RecordsBufferedCount="0" RecordsDisplayCount="1" RecordsFetchedCount="0" InsertAllowed="true" UpdateAllowed="true" DeleteAllowed="true" DirtyInfo="true" KeyMode="Unique" PreviousNavigationBlockName="BLOCKNAME" DatabaseBlock="false" QueryDataSourceType="None" QueryAllowed="true" DMLDataType="None" NavigationStyle="Change Data Block" ShowScrollbar="false">
+         <Item Name="HOME" Width="950" ItemType="Push Button" BackColor="canvas" XPosition="6850" FontName="helvetica" YPosition="0" FontSize="1100" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" Label="HOME" FontSpacing="Normal" ForegroundColor="black" CanvasName="BLOCKNAME" Height="250">
+            <Trigger Name="WHEN-BUTTON-PRESSED" DirtyInfo="true" TriggerText="BEGIN&amp;#10;&#x9;CALL_FORM('/data/appl/apps/apps_st/appl/po/12.0.0/forms/US/G1_CUSTOMERHOMEPAGE');&amp;#10;END;"/>
+         </Item>
+         <Item Name="T1" Justification="Left" Width="1650" ItemType="Text Item" DataType="Date" BackColor="r85g85b85" XPosition="1400" FontName="helvetica" YPosition="1375" FontSize="1000" FontStyle="Plain" DirtyInfo="true" FontWeight="Medium" FontSpacing="Normal" ForegroundColor="black" FormatMask="DD-MON-YYYY" CanvasName="BLOCKNAME" Height="250"/>
+         <Item Name="T2" Justification="Left" Width="1650" ItemType="Text Item" DataType="Date" BackColor="r85g85b85" XPosition="5063" FontName="helvetica" YPosition="1375" FontSize="1000" FontStyle="Plain" DirtyInfo="true" FontWeight="Medium" FontSpacing="Normal" ForegroundColor="black" FormatMask="DD-MON-YYYY" CanvasName="BLOCKNAME" Height="250">
+            <Trigger Name="WHEN-VALIDATE-ITEM" DirtyInfo="true" TriggerText="begin&amp;#10;&#x9;&amp;#10;&#x9;if :t2>sysdate OR :t2&lt;:t1 then &amp;#10;&#x9;&#x9;&#x9;fnd_message.set_string('PLEASE ENTER VALID DATE ');&amp;#10;&#x9;fnd_message.show;&amp;#10;&#x9;:T1:='';&amp;#10;&#x9;:T2:='';&amp;#10;&#x9;&amp;#10;&#x9;END IF;&amp;#10;END;&amp;#10;&amp;#10;&#x9;"/>
+         </Item>
+         <Item Name="T3" Justification="Left" Width="1650" ItemType="Display Item" BackColor="r85g85b85" XPosition="5850" FontName="helvetica" YPosition="625" FontSize="1000" FontStyle="Plain" DirtyInfo="true" FontWeight="Medium" FontSpacing="Normal" ForegroundColor="black" CanvasName="BLOCKNAME" Height="250"/>
+         <Item Name="CHECK" Width="1500" ItemType="Push Button" BackColor="canvas" XPosition="1475" FontName="helvetica" YPosition="4125" FontSize="1200" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" Label="CHECK" FontSpacing="Normal" ForegroundColor="black" CanvasName="BLOCKNAME" Height="250">
+            <Trigger Name="WHEN-BUTTON-PRESSED" DirtyInfo="true" TriggerText="BEGIN&amp;#10;&#x9;IF :T1 IS NULL OR :T2 IS NULL THEN &amp;#10;&#x9;&#x9;&#x9;fnd_message.set_string('ENTER VALID DATE');&amp;#10;&#x9;fnd_message.show;&amp;#10;&#x9;ELSE&amp;#10;&#x9;GO_BLOCK('G1_TRANSACTIONINFO');&amp;#10;&#x9;EXECUTE_QUERY;&amp;#10;&#x9;END IF;&amp;#10;EXCEPTION &amp;#10;&#x9;WHEN NO_DATA_FOUND THEN &amp;#10;&#x9;&#x9;fnd_message.set_string('NO ENTRY FOUND');&amp;#10;&#x9;fnd_message.show;&amp;#10;&#x9;END;"/>
+         </Item>
+         <Item Name="BACK" Width="1500" ItemType="Push Button" BackColor="canvas" XPosition="5138" FontName="helvetica" YPosition="4125" FontSize="1200" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" Label="BACK" FontSpacing="Normal" ForegroundColor="black" CanvasName="BLOCKNAME" Height="250">
+            <Trigger Name="WHEN-BUTTON-PRESSED" DirtyInfo="true" TriggerText="declare&amp;#10;&#x9; pl_ACC paramlist;&amp;#10;BEGIN&amp;#10;&amp;#10;&amp;#10;&#x9;IF NOT ID_NULL(pl_ACC) THEN&amp;#10;    destroy_parameter_list(pl_ACC);&amp;#10;    ELSE&amp;#10;    pl_ACC := create_parameter_list('pl_AFFF');&amp;#10;   add_parameter(pl_ACC,'P1',text_parameter,:T3);&amp;#10;   &#x9;END IF;&amp;#10;CALL_FORM('/data/appl/apps/apps_st/appl/po/12.0.0/forms/US/G1_TRANSACTIONENTRY',NO_HIDE,DO_REPLACE,NO_QUERY_ONLY,pl_ACC);&amp;#10;END;"/>
+         </Item>
+      </Block>
+      <Block Name="G1_TRANSACTIONINFO" QueryDataSourceName="G1_TRANSACTIONINFO" RecordsDisplayCount="5" DirtyInfo="true" WhereClause="Account_Number=:T3 AND TransactionDate BETWEEN :T1 AND :T2" ScrollbarCanvasName="BLOCKNAME" ScrollbarTabPageName="" ScrollbarWidth="188" ScrollbarXPosition="6720" ScrollbarYPosition="2516" ShowScrollbar="true" ScrollbarLength="985">
+         <Item Name="TRANSACTIONID" Prompt="Transactionid" PromptAttachmentEdge="Top" TabPageName="" PromptAlign="Center" PromptFontSize="800" Width="1229" MaximumLength="11" ItemType="Text Item" DataType="Number" XPosition="988" Required="true" YPosition="2516" DirtyInfo="true" PromptFontName="Tahoma" PromptFontStyle="Plain" CanvasName="BLOCKNAME" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="TRANSACTIONID" PromptDisplayStyle="First Record" ItemsDisplay="0" Height="197"/>
+         <Item Name="TRANSACTIONDATE" Prompt="Transactiondate" PromptAttachmentEdge="Top" TabPageName="" PromptAlign="Center" PromptFontSize="800" Width="1229" MaximumLength="11" ItemType="Text Item" DataType="Date" XPosition="2217" YPosition="2516" DirtyInfo="true" PromptFontName="Tahoma" PromptFontStyle="Plain" CanvasName="BLOCKNAME" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="TRANSACTIONDATE" PromptDisplayStyle="First Record" ItemsDisplay="0" Height="197"/>
+         <Item Name="AMOUNT" Prompt="Amount" PromptAttachmentEdge="Top" TabPageName="" PromptAlign="Center" PromptFontSize="800" Width="1024" MaximumLength="9" ItemType="Text Item" DataType="Number" XPosition="3446" YPosition="2516" DirtyInfo="true" PromptFontName="Tahoma" PromptFontStyle="Plain" CanvasName="BLOCKNAME" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="AMOUNT" PromptDisplayStyle="First Record" ItemsDisplay="0" Height="197"/>
+         <Item Name="CHEQUENO" Prompt="Chequeno" PromptAttachmentEdge="Top" TabPageName="" PromptAlign="Center" PromptFontSize="800" Width="1229" MaximumLength="11" ItemType="Text Item" DataType="Number" XPosition="4470" Required="true" YPosition="2516" DirtyInfo="true" PromptFontName="Tahoma" PromptFontStyle="Plain" CanvasName="BLOCKNAME" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="CHEQUENO" PromptDisplayStyle="First Record" ItemsDisplay="0" Height="197"/>
+         <Item Name="TRANSACTION_TYPE" Prompt="Transaction Type" PromptAttachmentEdge="Top" TabPageName="" PromptAlign="Center" PromptFontSize="800" Width="307" MaximumLength="2" ItemType="Text Item" XPosition="6056" YPosition="2516" DirtyInfo="true" PromptFontName="Tahoma" PromptFontStyle="Plain" CanvasName="BLOCKNAME" PromptFontWeight="Bold" PromptFontSpacing="Normal" ColumnName="TRANSACTION_TYPE" PromptDisplayStyle="First Record" DataLengthSemantics="BYTE" ItemsDisplay="0" Height="197"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="true" DSCPrecision="10" DSCName="TRANSACTIONID" DSCScale="0" DSCType="NUMBER" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="false" DSCPrecision="0" DSCName="TRANSACTIONDATE" DSCScale="0" DSCType="DATE" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="15" DSCMandatory="false" DSCPrecision="0" DSCName="ACCOUNT_NUMBER" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="false" DSCPrecision="8" DSCName="AMOUNT" DSCScale="0" DSCType="NUMBER" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="true" DSCPrecision="10" DSCName="CHEQUENO" DSCScale="0" DSCType="NUMBER" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="2" DSCMandatory="false" DSCPrecision="0" DSCName="TRANSACTION_TYPE" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+      </Block>
+      <Canvas Name="BLOCKNAME" ShowHorizontalScrollbar="false" DirtyInfo="true" Width="7800" WindowName="BLOCKNAME" ShowVerticalScrollbar="false" Height="5827">
+         <Graphics Name="IMAGE134" Width="7800" ClipWidth="7800" ImageFilename="G1_TRANSACTIONDETAILS_BLOCKNAME_IMAGE134.tif" ClipHeight="5000" XPosition="0" YPosition="0" DirtyInfo="true" GraphicsType="Image" HorizontalMargin="94" ScrollbarWidth="188" VerticalMargin="188" HorizontalObjectOffset="188" Height="5000" StartPromptOffset="94"/>
+         <Graphics Name="TEXT109" Width="438" FillPattern="none" EdgePattern="none" BackColor="r85g85b85" XPosition="796" YPosition="1583" Bevel="None" VerticalOrigin="Bottom" GraphicsFontWeight="Bold" GraphicsFontSpacing="Normal" GraphicsType="Text" ScrollbarWidth="188" Height="167" GraphicsFontName="helvetica" GraphicsFontSize="1000" GraphicsFontStyle="0" GraphicsText="FROM:" DirtyInfo="true" GraphicsFontColor="black" GraphicsFontColorCode="0" HorizontalMargin="94" VerticalMargin="188" HorizontalObjectOffset="188" StartPromptOffset="94">
+            <CompoundText Name="CMPTXT110">
+               <TextSegment Name="TEXTSTR111" FontName="helvetica" FontSize="1000" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" FontSpacing="Normal" ForegroundColor="black" Text="FROM:"/>
+            </CompoundText>
+         </Graphics>
+         <Graphics Name="TEXT112" Width="229" FillPattern="none" EdgePattern="none" BackColor="r85g85b85" XPosition="4794" YPosition="1583" Bevel="None" VerticalOrigin="Bottom" GraphicsFontWeight="Bold" GraphicsFontSpacing="Normal" GraphicsType="Text" ScrollbarWidth="188" Height="167" GraphicsFontName="helvetica" GraphicsFontSize="1000" GraphicsFontStyle="0" GraphicsText="TO:" DirtyInfo="true" GraphicsFontColor="black" GraphicsFontColorCode="0" HorizontalMargin="94" VerticalMargin="188" HorizontalObjectOffset="188" StartPromptOffset="94">
+            <CompoundText Name="CMPTXT113">
+               <TextSegment Name="TEXTSTR114" FontName="helvetica" FontSize="1000" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" FontSpacing="Normal" ForegroundColor="black" Text="TO:"/>
+            </CompoundText>
+         </Graphics>
+         <Graphics Name="TEXT115" Width="1313" FillPattern="none" EdgePattern="none" BackColor="r85g85b85" XPosition="4500" YPosition="833" Bevel="None" VerticalOrigin="Bottom" GraphicsFontWeight="Bold" GraphicsFontSpacing="Normal" GraphicsType="Text" ScrollbarWidth="188" Height="167" GraphicsFontName="helvetica" GraphicsFontSize="1000" GraphicsFontStyle="0" GraphicsText="ACCOUNT NUMBER:" DirtyInfo="true" GraphicsFontColor="black" GraphicsFontColorCode="0" HorizontalMargin="94" VerticalMargin="188" HorizontalObjectOffset="188" StartPromptOffset="94">
+            <CompoundText Name="CMPTXT116">
+               <TextSegment Name="TEXTSTR117" FontName="helvetica" FontSize="1000" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" FontSpacing="Normal" ForegroundColor="black" Text="ACCOUNT NUMBER:"/>
+            </CompoundText>
+         </Graphics>
+         <Graphics Name="TEXT127" Width="865" FillPattern="none" EdgePattern="none" BackColor="r85g85b85" XPosition="1782" YPosition="1823" Bevel="None" VerticalOrigin="Bottom" GraphicsFontWeight="Bold" GraphicsFontSpacing="Normal" GraphicsType="Text" ScrollbarWidth="188" Height="146" GraphicsFontName="helvetica" GraphicsFontSize="800" GraphicsFontStyle="0" GraphicsText="(DD-MON-YYYY)" DirtyInfo="true" GraphicsFontColor="black" GraphicsFontColorCode="0" HorizontalMargin="94" VerticalMargin="188" HorizontalObjectOffset="188" StartPromptOffset="94">
+            <CompoundText Name="CMPTXT128">
+               <TextSegment Name="TEXTSTR129" FontName="helvetica" FontSize="800" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" FontSpacing="Normal" ForegroundColor="black" Text="(DD-MON-YYYY)"/>
+            </CompoundText>
+         </Graphics>
+         <Graphics Name="TEXT130" Width="865" FillPattern="none" EdgePattern="none" BackColor="r85g85b85" XPosition="5500" YPosition="1844" Bevel="None" VerticalOrigin="Bottom" GraphicsFontWeight="Bold" GraphicsFontSpacing="Normal" GraphicsType="Text" ScrollbarWidth="188" Height="146" GraphicsFontName="helvetica" GraphicsFontSize="800" GraphicsFontStyle="0" GraphicsText="(DD-MON-YYYY)" DirtyInfo="true" GraphicsFontColor="black" GraphicsFontColorCode="0" HorizontalMargin="94" VerticalMargin="188" HorizontalObjectOffset="188" StartPromptOffset="94">
+            <CompoundText Name="CMPTXT131">
+               <TextSegment Name="TEXTSTR132" FontName="helvetica" FontSize="800" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" FontSpacing="Normal" ForegroundColor="black" Text="(DD-MON-YYYY)"/>
+            </CompoundText>
+         </Graphics>
+         <Graphics Name="TEXT123" Width="2865" FillPattern="none" EdgePattern="none" BackColor="r85g85b85" XPosition="2440" YPosition="417" Bevel="None" VerticalOrigin="Bottom" GraphicsFontWeight="Bold" GraphicsFontSpacing="Normal" GraphicsType="Text" ScrollbarWidth="188" Height="344" GraphicsFontName="helvetica" GraphicsFontSize="2000" GraphicsFontStyle="0" GraphicsText="TRANSACTION INFO" DirtyInfo="true" GraphicsFontColor="black" GraphicsFontColorCode="0" HorizontalMargin="94" VerticalMargin="188" HorizontalObjectOffset="188" StartPromptOffset="94">
+            <CompoundText Name="CMPTXT124">
+               <TextSegment Name="TEXTSTR125" FontName="helvetica" FontSize="2000" FontStyle="Plain" DirtyInfo="true" FontWeight="Bold" FontSpacing="Normal" ForegroundColor="black" Text="TRANSACTION INFO"/>
+            </CompoundText>
+         </Graphics>
+         <Graphics Name="FRAME122" RecordsDisplayCount="5" Width="6108" EdgeBackColor="white" FillPattern="none" EdgePattern="solid" FrameTitleForegroundColor="black" FrameTitleFontName="Tahoma" FrameTitleFontSize="900" FrameTitleFontStyle="Plain" FrameTitleFontWeight="Bold" FrameTitleFontSpacing="Normal" XPosition="894" YPosition="2193" Bevel="Inset" GraphicsType="Frame" ScrollbarWidth="188" ShowScrollbar="true" Height="1496" FrameTitleAlign="Start" FrameTitleOffset="188" FrameTitleSpacing="94" FrameTitle="TRANSACTION INFO" LayoutStyle="Tabular" DirtyInfo="true" LayoutDataBlockName="G1_TRANSACTIONINFO" HorizontalMargin="94" VerticalMargin="188" HorizontalObjectOffset="0" StartPromptOffset="94"/>
+      </Canvas>
+      <ModuleParameter Name="P1" DirtyInfo="true"/>
+      <ProgramUnit Name="APP_CUSTOM" ProgramUnitText="package app_custom is&amp;#10;  procedure close_window(wnd in varchar2);&amp;#10;  procedure open_window(wnd in varchar2);&amp;#10;end;" ProgramUnitType="Package Spec"/>
+      <ProgramUnit Name="APP_CUSTOM" ProgramUnitText="package body app_custom is&amp;#10;&amp;#10;procedure close_window(wnd in varchar2) is&amp;#10;  /*&amp;#10;    This procedure is called whenever the user closes a window, as&amp;#10;    a result of the WHEN-WINDOW-CLOSED trigger firing. You are responsible&amp;#10;    for supplying unqiue code that addresses the needs of each window, such as&amp;#10;    deferring master-detail relations, or closing related windows.&amp;#10;&amp;#10;    Other windows that will be referenced into your form rely on the default&amp;#10;    code at the beginning and end of this procedure - under no circumstances&amp;#10;    should you modify that code.&amp;#10;  */&amp;#10;begin&amp;#10;&amp;#10;  /*&amp;#10;    THE FOLLOWING CODE MUST NOT BE MODIFIED. It prevents windows from closing&amp;#10;    while in enter-query mode.&amp;#10;  */&amp;#10;&amp;#10;  if (name_in('system.mode') = 'ENTER-QUERY') then&amp;#10;    app_exception.disabled;&amp;#10;    return;&amp;#10;  end if;&amp;#10;&amp;#10;  /*&amp;#10;    YOU MUST MODIFY THE FOLLOWING CODE to account for specific behaviors of your&amp;#10;    form, including:&amp;#10;    1. identifying the 'first window' of the form and treating&amp;#10;       a close window on that window like a close form.&amp;#10;    2. deferring master-detail relations for detail blocks that&amp;#10;       exist in other windows.&amp;#10;    3. closing other related windows.&amp;#10;    The default code at the end of this procedure actually closes the window.&amp;#10;    If you do that yourself in this code, issue a 'return;' at the end of &amp;#10;    your logic for your specific windows.&amp;#10;  */ &amp;#10;&amp;#10;  if (wnd = 'BLOCKNAME') then&amp;#10;    app_window.close_first_window;&amp;#10;  elsif (wnd = 'BLOCKNAME') then &amp;#10;    --defer relations&amp;#10;    --close related windows   &amp;#10;    null;  &amp;#10;  elsif (wnd = 'BLOCKNAME') then &amp;#10;    --defer relations&amp;#10;    --close related windows   &amp;#10;    null;&amp;#10;  end if;&amp;#10;&amp;#10;  /*&amp;#10;    THE FOLLOWING CODE MUST NOT BE MODIFIED. It ensures the cursor is not in &amp;#10;    the window that will be closed (by moving it to the previous block if &amp;#10;    needed), and actually closes the specified window.&amp;#10;  */&amp;#10;&amp;#10;  if (wnd = get_view_property(get_item_property(:SYSTEM.CURSOR_ITEM, &amp;#10;                              ITEM_CANVAS), WINDOW_NAME)) then&amp;#10;    do_key('PREVIOUS_BLOCK');&amp;#10;  end if;&amp;#10;  hide_window(wnd);&amp;#10;&amp;#10;end close_window;&amp;#10;&amp;#10;procedure open_window(wnd in varchar2) is&amp;#10;  /*&amp;#10;    This procedure should be called from any code that could result&amp;#10;    in a non-modal window being opened.&amp;#10;  */&amp;#10;begin  &amp;#10;  /*&amp;#10;    YOU MUST MODIFY THE FOLLOWING CODE to account for specific behaviors of your&amp;#10;    form, including:   &amp;#10;    1. Positioning the window to be opened&amp;#10;    2. Resetting master-detail relations for blocks in the window    &amp;#10;    3. navigation to a block in that window&amp;#10;  */&amp;#10;  if (wnd = 'BLOCKNAME') then&amp;#10;    --position the window&amp;#10;    --reset master-detail relations&amp;#10;    --navigate to a block in the window&amp;#10;    null;&amp;#10;  elsif (wnd = 'BLOCKNAME') then &amp;#10;    --position the window&amp;#10;    --reset master-detail relations&amp;#10;    --navigate to a block in the window&amp;#10;    null;&amp;#10;  elsif (wnd = 'BLOCKNAME') then &amp;#10;    --position the window&amp;#10;    --reset master-detail relations&amp;#10;    --navigate to a block in the window&amp;#10;    null;&amp;#10;  end if;&amp;#10;&amp;#10;end open_window;&amp;#10;&amp;#10;end app_custom;&amp;#10;" ProgramUnitType="Package Body"/>
+      <Trigger Name="WHEN-WINDOW-RESIZED" FireInQuery="true" TriggerText="null;&amp;#10;--&amp;#10;-- if :system.event_window in ('folder windows') then&amp;#10;--   app_folder.event('WHEN-WINDOW-RESIZED');&amp;#10;-- end if;&amp;#10;--" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="FOLDER_ACTION" FireInQuery="true" TriggerText="--&amp;#10;-- Remove the message and uncomment the line after it&amp;#10;-- to activate the folder actions&amp;#10;--&amp;#10;message('You must modify the FOLDER_ACTION trigger in your form!');&amp;#10;-- app_folder.event(:global.folder_action);" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="FOLDER_RETURN_ACTION" FireInQuery="true" TriggerText="null;&amp;#10;--&amp;#10;-- action code is in :global.folder_action&amp;#10;-- affected field is in :global.folder_field&amp;#10;--" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-HELP" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-HELP');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-DUPREC" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-DUPREC');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-EXIT" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-EXIT');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-EDIT" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-EDIT');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-COMMIT" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-COMMIT');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-CLRFRM" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-CLRFRM');&amp;#10;--&amp;#10;-- app_folder.event('KEY-CLRFRM');&amp;#10;--" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-MENU" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-MENU');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="KEY-LISTVAL" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('KEY-LISTVAL');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="WHEN-WINDOW-CLOSED" FireInQuery="true" TriggerText="app_standard.event('WHEN-WINDOW-CLOSED');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="POST-FORM" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('POST-FORM');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="PRE-FORM" TriggerText="FND_STANDARD.FORM_INFO('$Revision: 120.0                                                                                                                                              $', 'Template Form', 'FND',&amp;#10;                       '$Date: 2005/05/06 23:25  $', '$Author: appldev $');&amp;#10;app_standard.event('PRE-FORM');&amp;#10;app_window.set_window_position('BLOCKNAME', 'FIRST_WINDOW');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="ON-ERROR" FireInQuery="true" TriggerText="APP_STANDARD.EVENT('ON-ERROR');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="WHEN-NEW-FORM-INSTANCE" FireInQuery="true" TriggerText="FDRCSID('$Header: TEMPLATE.fmb 120.0 2005/05/06 23:25  appldev ship                                                                                                                                                                                                                                                                    $');&amp;#10;APP_STANDARD.EVENT('WHEN-NEW-FORM-INSTANCE');&amp;#10;--&amp;#10;-- app_folder.define_folder_block('template test', 'folder_block', 'prompt_block', 'stacked_canvas', 'window', 'disabled functions');&amp;#10;-- app_folder.event('VERIFY');&amp;#10;--&amp;#10;BEGIN&amp;#10;&#x9;:T3:=:PARAMETER.P1;&amp;#10;END;" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="WHEN-NEW-RECORD-INSTANCE" TriggerText="APP_STANDARD.EVENT('WHEN-NEW-RECORD-INSTANCE');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="WHEN-NEW-ITEM-INSTANCE" TriggerText="APP_STANDARD.EVENT('WHEN-NEW-ITEM-INSTANCE');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="WHEN-NEW-BLOCK-INSTANCE" TriggerText="APP_STANDARD.EVENT('WHEN-NEW-BLOCK-INSTANCE');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="QUERY_FIND" TriggerText="APP_STANDARD.EVENT('QUERY_FIND');" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="CLOSE_WINDOW" TriggerText="APP_CUSTOM.CLOSE_WINDOW(:SYSTEM.EVENT_WINDOW);" DisplayInKeyboardHelp="true"/>
+      <Trigger Name="ACCEPT" TriggerText="APP_STANDARD.EVENT('ACCEPT');" DisplayInKeyboardHelp="true"/>
+      <Window Name="BLOCKNAME" DirtyInfo="true" Title="Block Title (name of the object)" Width="7800" Height="5000" PrimaryCanvas="BLOCKNAME"/>
+      <ObjectGroup Name="STANDARD_PC_AND_VA" ParentModule="APPSTAND" ParentModuleType="12" ParentName="STANDARD_PC_AND_VA" ParentFilename="APPSTAND" ParentType="23">
+         <ObjectGroupChild Name="TOOLTIP" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DATA" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DATA_REQUIRED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DATA_SPECIAL" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DATA_DRILLDOWN" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="PROMPT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TITLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CONTROL" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON_ICONIC" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON_MAC" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CANVAS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DISABLED_TEXT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="SELECTED_DATA" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="RADIO_CHECK" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FIXED_TEXT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FIXED_PROMPT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CURRENT_RECORD" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="OTHER_RECORD" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="QUERY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CUSTOM1" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CUSTOM2" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CUSTOM3" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CUSTOM4" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CUSTOM5" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FRAME_TITLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ASSOCIATED_PROMPT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FLEX_EDITABLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FLEX_REQUIRED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FLEX_NOT_EDITABLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="NO_CHANGE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="MODULE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="WINDOW" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="WINDOW_DIALOG" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="WINDOW_DIALOG_WITH_MENU" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CANVAS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CANVAS_STACKED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CANVAS_STACKED_FIXED_FIELD" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BLOCK" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BLOCK_DIALOG" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON_ICONIC" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BUTTON_ICONIC_SMALL" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CURSOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_CELL" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CHECKBOX" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CREATION_OR_LAST_UPDATE_DATE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DISPLAY_ITEM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DYNAMIC_PROMPT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DYNAMIC_TITLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="LIST" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="LIST_REGION_CONTROL" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="LOV" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="RADIO_GROUP" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="RADIO_BUTTON" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_MULTILINE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_DISPLAY_ONLY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_DATE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CURRENT_RECORD_INDICATOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="DRILLDOWN_RECORD_INDICATOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CHECKBOX_COORDINATION" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_CURRENCY_CODE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_DESC_FLEX" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_PERCENT_FIXED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TEXT_ITEM_PERCENT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ROW_ID" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="SWITCHER" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BP_PROMPT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FRAME_VERT_LINE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FRAME_HORZ_LINE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="BP_TITLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FRAME_RECT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TAB_CANVAS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TAB_PAGE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TREE" SubclassSubObject="true"/>
+      </ObjectGroup>
+      <ObjectGroup Name="STANDARD_TOOLBAR" ParentModule="APPSTAND" ParentModuleType="12" ParentName="STANDARD_TOOLBAR" ParentFilename="APPSTAND" ParentType="23">
+         <ObjectGroupChild Name="APPCORE_PROFILE_NOT_DEFINED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_FUNCTION_PROCESSED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_NONE_AVAILABLE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_PROPERTIES" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_PROPERTIES" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="HELP_TARGET" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="PROGRESS_INDICATOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="PROGRESS_INDICATOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F9" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F0" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F1" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F2" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F3" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F4" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F5" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F6" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F7" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="KEY-F8" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="PROGRESS_INDICATOR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="EXPORT" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ALT_REGIONS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ALT_REGIONS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ALT_REGIONS_DUM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ZOOM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ZOOM_DUM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_ZOOM_VALUE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APP_ACCESS_DUM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APP_ACCESS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="FOLDER_BLOCKS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="LASTRECORD" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CLOSE_THIS_WINDOW" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TOOLBAR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ENABLE_LIST_LAMP" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ENABLE_LIST_LAMP" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ZOOM" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="QUERY_ONLY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="G_QUERY_FIND" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="STANDARD_ATTACHMENTS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="HR_MODE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="WHEN-FORM-NAVIGATE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="MENU_TO_APPCORE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="PRE-POPUP-MENU" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="POPUP" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="POPUP_FOLDER" SubclassSubObject="true"/>
+      </ObjectGroup>
+      <ObjectGroup Name="STANDARD_CALENDAR" ParentModule="APPSTAND" ParentModuleType="12" ParentName="STANDARD_CALENDAR" ParentFilename="APPSTAND" ParentType="23">
+         <ObjectGroupChild Name="TIMEZONES_AND_DATETIME" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TIMEZONES" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_TIMEZONE" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="STANDARD_DAYS_LABELS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="ARABIC_DAYS_LABELS" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="APPCORE_TO_CALENDAR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_TIME" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_SELECTED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_SELECTED_TODAY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_CURR" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_CURR_TODAY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_OTHER" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_OTHER_TODAY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_CURR_DISABLED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_CURR_DISABLED_TODAY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_OTHER_DISABLED" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="CALENDAR_OTHER_DISABLED_TODAY" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TIMEZONES_AND_DATETIME" SubclassSubObject="true"/>
+         <ObjectGroupChild Name="TIMEZONES" SubclassSubObject="true"/>
+      </ObjectGroup>
+   </FormModule>
+</Module>
