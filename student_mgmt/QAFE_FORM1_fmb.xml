@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Module version="122011900" xmlns="http://xmlns.oracle.com/Forms">
+   <FormModule Name="QAFE_FORM1" DirtyInfo="true" Title="QAFE_FORM1" ConsoleWindow="COURSES" MenuModule="DEFAULT&amp;SMARTBAR">
+      <Coordinate CharacterCellWidth="7" RealUnit="Point" DefaultFontScaling="true" CharacterCellHeight="14" CoordinateSystem="Real"/>
+      <Block Name="COURSE" QueryDataSourceName="course" DirtyInfo="true" ScrollbarWidth="14" ScrollbarLength="135">
+         <Item Name="PREREQUISITE" Prompt="Prerequisite" TabPageName="" PromptAttachmentOffset="7" DistanceBetweenRecords="98" Width="68" MaximumLength="9" ItemType="Text Item" DataType="Number" XPosition="71" YPosition="71" DirtyInfo="true" CanvasName="" ColumnName="PREREQUISITE" PromptDisplayStyle="All Records" ItemsDisplay="0" Height="14"/>
+         <Item Name="COURSE_NO" Prompt="Course No." TabPageName="" DistanceBetweenRecords="84" Width="68" DataType="Number" XPosition="71" YPosition="29" DirtyInfo="true" CanvasName="COURSE" PromptDisplayStyle="First Record" ItemsDisplay="0" Height="14"/>
+         <Item Name="DESCRIPTION" Prompt="Description" TabPageName="" PromptAttachmentOffset="7" DistanceBetweenRecords="84" Width="344" MaximumLength="50" ItemType="Text Item" XPosition="71" YPosition="43" DirtyInfo="true" CanvasName="COURSE" ColumnName="DESCRIPTION" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE" ItemsDisplay="0" Height="14"/>
+         <Item Name="COST" Prompt="Cost" TabPageName="" PromptAttachmentOffset="7" DistanceBetweenRecords="84" Width="81" MaximumLength="11" ItemType="Text Item" DataType="Number" XPosition="71" YPosition="57" DirtyInfo="true" CanvasName="COURSE" ColumnName="COST" PromptDisplayStyle="All Records" ItemsDisplay="0" Height="14"/>
+         <Item Name="CREATED_BY" Prompt="Created By" TabPageName="" PromptAttachmentOffset="7" DistanceBetweenRecords="84" Width="209" ItemType="Text Item" XPosition="71" YPosition="71" DirtyInfo="true" CanvasName="COURSE" ColumnName="CREATED_BY" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE" ItemsDisplay="0" Height="14"/>
+         <Item Name="CREATED_DATE" Prompt="Created Date" TabPageName="" PromptAttachmentOffset="7" DistanceBetweenRecords="84" Width="81" MaximumLength="11" ItemType="Text Item" DataType="Date" XPosition="71" YPosition="85" DirtyInfo="true" CanvasName="COURSE" ColumnName="CREATED_DATE" PromptDisplayStyle="All Records" ItemsDisplay="0" Height="14"/>
+         <Item Name="MODIFIED_BY" Prompt="Modified By" TabPageName="" PromptAttachmentOffset="7" DistanceBetweenRecords="84" Width="209" ItemType="Text Item" XPosition="71" YPosition="99" DirtyInfo="true" CanvasName="COURSE" ColumnName="MODIFIED_BY" PromptDisplayStyle="All Records" DataLengthSemantics="BYTE" ItemsDisplay="0" Height="14"/>
+         <Item Name="MODIFIED_DATE" Prompt="Modified Date" TabPageName="" PromptAttachmentOffset="7" DistanceBetweenRecords="84" Width="81" MaximumLength="11" ItemType="Text Item" DataType="Date" XPosition="71" YPosition="113" DirtyInfo="true" CanvasName="COURSE" ColumnName="MODIFIED_DATE" PromptDisplayStyle="All Records" ItemsDisplay="0" Height="14"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="true" DSCPrecision="38" DSCName="COURSE_NO" DSCScale="0" DSCType="NUMBER" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="50" DSCMandatory="false" DSCPrecision="0" DSCName="DESCRIPTION" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="false" DSCPrecision="9" DSCName="COST" DSCScale="2" DSCType="NUMBER" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="false" DSCPrecision="8" DSCName="PREREQUISITE" DSCScale="0" DSCType="NUMBER" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="30" DSCMandatory="false" DSCPrecision="0" DSCName="CREATED_BY" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="false" DSCPrecision="0" DSCName="CREATED_DATE" DSCScale="0" DSCType="DATE" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="30" DSCMandatory="false" DSCPrecision="0" DSCName="MODIFIED_BY" DSCScale="0" DSCType="VARCHAR2" DSCNochildren="false" Type="Query"/>
+         <DataSourceColumn DSCLength="0" DSCMandatory="false" DSCPrecision="0" DSCName="MODIFIED_DATE" DSCScale="0" DSCType="DATE" DSCNochildren="false" Type="Query"/>
+         <Trigger Name="PRE-INSERT" DirtyInfo="true" TriggerText=":created_date := sysdate;&amp;#10;:created_by := :global.user_id;&amp;#10;:modified_date := sysdate;&amp;#10;:modified_by := :global.user_id;&amp;#10;:course_no := course_no_seq.nextval;"/>
+         <Trigger Name="PRE-UPDATE" DirtyInfo="true" TriggerText=":modified_date := sysdate;&amp;#10;:modified_by := :global.user_id;&amp;#10;"/>
+      </Block>
+      <Canvas Name="COURSE" DirtyInfo="true" Width="540" WindowName="COURSES" Height="324" ViewportHeight="324" ViewportWidth="540">
+         <Graphics Name="COURSE" Width="415" EdgeBackColor="white" FillPattern="none" EdgePattern="solid" FrameTitleOffset="14" XPosition="7" FrameTitleSpacing="7" YPosition="15" FrameTitle="Course" Bevel="Inset" DirtyInfo="true" LayoutDataBlockName="COURSE" GraphicsType="Frame" HorizontalMargin="7" ScrollbarWidth="14" VerticalMargin="14" HorizontalObjectOffset="14" Height="126" StartPromptOffset="7"/>
+      </Canvas>
+      <Trigger Name="WHEN-NEW-FORM-INSTANCE" DirtyInfo="true" TriggerText=":global.user_id := 'Qafe';&amp;#10;&amp;#10;go_block('COURSE');&amp;#10;execute_query();&amp;#10;"/>
+      <Window Name="COURSES" DirtyInfo="true" Title="Courses" Width="540" Height="324"/>
+   </FormModule>
+</Module>
